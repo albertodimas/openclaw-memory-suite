@@ -1,0 +1,24 @@
+{
+  "id": "memory-rerank",
+  "name": "Memory Rerank",
+  "description": "Rerank memory recall results using a local model and inject the most relevant items into context.",
+  "kind": "utility",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean", "default": true },
+      "ollamaUrl": { "type": "string", "default": "http://127.0.0.1:11434" },
+      "rerankModel": { "type": "string", "default": "dengcao/Qwen3-Reranker-8B:Q5_K_M" },
+      "ltmLimit": { "type": "number", "default": 25 },
+      "maxDocuments": { "type": "number", "default": 8 },
+      "minScore": { "type": "number", "default": 0.82 },
+      "minGap": { "type": "number", "default": 0.08 },
+      "timeoutMs": { "type": "number", "default": 8000 },
+      "maxTotalMs": { "type": "number", "default": 20000 },
+      "maxDocChars": { "type": "number", "default": 800 },
+      "promptTemplate": { "type": "string" }
+    }
+  }
+}

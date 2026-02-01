@@ -1,0 +1,9 @@
+{
+  "name": "memory-toolskill",
+  "version": "1.0.0",
+  "description": "Tool/Skill learning for OpenClaw",
+  "type": "module",
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

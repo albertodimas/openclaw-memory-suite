@@ -1,0 +1,25 @@
+{
+  "id": "memory-meta",
+  "uiHints": {
+    "path": {
+      "label": "Meta Memory Path",
+      "placeholder": "~/.openclaw/memory/meta.json",
+      "advanced": true
+    },
+    "alwaysRecall": {
+      "label": "Always Recall",
+      "help": "Inject meta-memory stats into every session"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean" },
+      "path": { "type": "string" },
+      "ltmDbPath": { "type": "string" },
+      "alwaysRecall": { "type": "boolean" },
+      "maxChars": { "type": "integer", "minimum": 200, "maximum": 4000 }
+    }
+  }
+}

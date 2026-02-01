@@ -1,0 +1,13 @@
+{
+  "name": "memory-goal",
+  "version": "1.0.0",
+  "description": "Goal/intent memory for OpenClaw",
+  "type": "module",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.23.0",
+    "openai": "^6.17.0"
+  },
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

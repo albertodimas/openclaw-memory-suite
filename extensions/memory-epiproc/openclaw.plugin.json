@@ -1,0 +1,166 @@
+{
+  "id": "memory-epiproc",
+  "uiHints": {
+    "embedding.apiKey": {
+      "label": "OpenAI API Key",
+      "sensitive": true,
+      "placeholder": "sk-proj-...",
+      "help": "API key for embeddings (or use ${OPENAI_API_KEY})"
+    },
+    "embedding.model": {
+      "label": "Embedding Model",
+      "placeholder": "text-embedding-3-large"
+    },
+    "dbPath": {
+      "label": "Database Path",
+      "placeholder": "~/.openclaw/memory/epiproc",
+      "advanced": true
+    },
+    "episodic": {
+      "label": "Episodic",
+      "help": "Episodic memory recall settings"
+    },
+    "procedural": {
+      "label": "Procedural",
+      "help": "Procedural memory recall settings"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean"
+      },
+      "dbPath": {
+        "type": "string"
+      },
+      "embedding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "text-embedding-3-small",
+              "text-embedding-3-large"
+            ]
+          }
+        },
+        "required": [
+          "apiKey"
+        ]
+      },
+      "episodic": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "recallLimit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "minScore": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "halfLifeDays": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 365
+          },
+          "maxChars": {
+            "type": "integer",
+            "minimum": 200,
+            "maximum": 4000
+          },
+          "alwaysRecall": {
+            "type": "boolean"
+          }
+        }
+      },
+      "procedural": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "recallLimit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "minScore": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "halfLifeDays": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 365
+          },
+          "minSteps": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "maxSteps": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "maxChars": {
+            "type": "integer",
+            "minimum": 200,
+            "maximum": 4000
+          },
+          "alwaysRecall": {
+            "type": "boolean"
+          }
+        }
+      },
+      "capture": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "maxUserChars": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 4000
+          },
+          "maxAssistantChars": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 4000
+          },
+          "maxTools": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        }
+      },
+      "redaction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "required": [
+      "embedding"
+    ]
+  }
+}

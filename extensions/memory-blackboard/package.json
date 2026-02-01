@@ -1,0 +1,9 @@
+{
+  "name": "memory-blackboard",
+  "version": "1.0.0",
+  "description": "Collaborative blackboard memory for OpenClaw",
+  "type": "module",
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

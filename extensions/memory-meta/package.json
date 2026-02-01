@@ -1,0 +1,12 @@
+{
+  "name": "memory-meta",
+  "version": "1.0.0",
+  "description": "Meta-memory stats for OpenClaw",
+  "type": "module",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.23.0"
+  },
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "memory-goal",
+  "uiHints": {
+    "embedding.apiKey": {
+      "label": "Embedding API Key",
+      "sensitive": true,
+      "placeholder": "sk-proj-..."
+    },
+    "embedding.model": {
+      "label": "Embedding Model",
+      "placeholder": "text-embedding-3-large"
+    },
+    "dbPath": {
+      "label": "Database Path",
+      "placeholder": "~/.openclaw/memory/goals",
+      "advanced": true
+    },
+    "captureMode": {
+      "label": "Capture Mode",
+      "help": "explicit | explicit_or_pattern | pattern"
+    },
+    "alwaysRecall": {
+      "label": "Always Recall",
+      "help": "Inject goals even without explicit query"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean" },
+      "dbPath": { "type": "string" },
+      "embedding": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": { "type": "string" },
+          "model": { "type": "string", "enum": ["text-embedding-3-small", "text-embedding-3-large"] }
+        },
+        "required": ["apiKey"]
+      },
+      "recallLimit": { "type": "integer", "minimum": 1, "maximum": 10 },
+      "minScore": { "type": "number", "minimum": 0, "maximum": 1 },
+      "halfLifeDays": { "type": "number", "minimum": 1, "maximum": 365 },
+      "alwaysRecall": { "type": "boolean" },
+      "captureMode": { "type": "string" },
+      "maxChars": { "type": "integer", "minimum": 200, "maximum": 4000 },
+      "redaction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "enabled": { "type": "boolean" }
+        }
+      }
+    },
+    "required": ["embedding"]
+  }
+}

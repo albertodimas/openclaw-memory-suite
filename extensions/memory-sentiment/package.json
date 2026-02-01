@@ -1,0 +1,9 @@
+{
+  "name": "memory-sentiment",
+  "version": "1.0.0",
+  "description": "Sentiment memory for OpenClaw",
+  "type": "module",
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

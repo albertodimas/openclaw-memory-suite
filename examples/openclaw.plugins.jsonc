@@ -1,0 +1,86 @@
+// Example plugin entries for OpenClaw Memory Suite
+{
+  "plugins": {
+    "slots": { "memory": "memory-lancedb" },
+    "entries": {
+      "memory-lancedb": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/lancedb",
+          "autoCapture": true,
+          "autoRecall": true
+        }
+      },
+      "memory-rerank": {
+        "enabled": true,
+        "config": {
+          "ollamaUrl": "http://127.0.0.1:11434",
+          "rerankModel": "dengcao/Qwen3-Reranker-8B:Q5_K_M",
+          "maxDocChars": 1200
+        }
+      },
+      "memory-epiproc": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/epiproc",
+          "episodic": { "enabled": true, "recallLimit": 3, "minScore": 0.5, "halfLifeDays": 14 },
+          "procedural": { "enabled": true, "recallLimit": 3, "minScore": 0.4, "halfLifeDays": 60 }
+        }
+      },
+      "memory-entity": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/entities",
+          "recallLimit": 4,
+          "minScore": 0.6,
+          "alwaysRecall": false
+        }
+      },
+      "memory-graph": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/graph",
+          "recallLimit": 4,
+          "minScore": 0.4,
+          "alwaysRecall": false
+        }
+      },
+      "memory-blackboard": {
+        "enabled": true,
+        "config": { "path": "~/.openclaw/memory/blackboard.json", "maxItems": 20, "alwaysRecall": false }
+      },
+      "memory-toolskill": {
+        "enabled": true,
+        "config": { "dbPath": "~/.openclaw/memory/toolskill", "alwaysRecall": false }
+      },
+      "memory-goal": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/goals",
+          "alwaysRecall": false
+        }
+      },
+      "memory-timeline": {
+        "enabled": true,
+        "config": {
+          "embedding": { "apiKey": "${OPENAI_API_KEY}", "model": "text-embedding-3-large" },
+          "dbPath": "~/.openclaw/memory/timeline",
+          "alwaysRecall": false
+        }
+      },
+      "memory-sentiment": {
+        "enabled": true,
+        "config": { "path": "~/.openclaw/memory/sentiment.json", "alwaysRecall": false }
+      },
+      "memory-meta": {
+        "enabled": true,
+        "config": { "path": "~/.openclaw/memory/meta.json", "alwaysRecall": false }
+      }
+    }
+  }
+}
