@@ -178,6 +178,17 @@ Luego el sistema calcula:
 - saved_total
 - saved_this_week
 
+Ejemplo de salida (valores cambian segun uso):
+```json
+"token_savings": {
+  "before_routing_avg": 8500,
+  "after_routing_avg": 255,
+  "saved_last_session": 8500,
+  "saved_total": 8500,
+  "saved_this_week": 8500
+}
+```
+
 ## Publicacion
 1) Inicializa repo Git en esta carpeta:
 ```
