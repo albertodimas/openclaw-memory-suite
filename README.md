@@ -26,6 +26,12 @@ Nota: memory-lancedb-strict se incluye como plugin opcional. Si prefieres lo est
 - Node.js 18+
 - Un proveedor de embeddings (OpenAI, Ollama/vLLM, etc.)
 
+## Quickstart
+
+1) Copia extensiones y reinicia gateway.
+2) Configura plugins.entries en openclaw.json.
+3) Corre openclaw doctor y prueba una consulta.
+
 ## Instalacion (rapida)
 1) Copia las extensiones a tu OpenClaw:
 ```
