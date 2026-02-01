@@ -347,14 +347,14 @@ function patternPart(toolName, argsSummary) {
 function shouldRecallEpisodic(prompt) {
   const p = prompt.toLowerCase();
   return (
-    /que paso|que ha pasado|que ocurrió|que ocurrio|cuando|ayer|semana pasada|mes pasado|la vez pasada|last week|yesterday|previous|historial|evento|timeline/.test(p)
+    /que paso|que ha pasado|que ocurrió|que ocurrio|cuando|ayer|hace un|hace una|hace poco|hace \d+|la otra vez|ultima vez|última vez|reciente|recent|recently|semana pasada|mes pasado|la vez pasada|last week|yesterday|previous|previously|earlier|the other day|historial|historia|registro|log|evento|timeline/.test(p)
   );
 }
 
 function shouldRecallProcedural(prompt) {
   const p = prompt.toLowerCase();
   return (
-    /como|cómo|how|procedimiento|pasos|runbook|playbook|workflow|orquest|arregl|resolv|fix|solved|solucion/.test(p)
+    /como|cómo|how|procedimiento|pasos|paso a paso|instrucciones|guia|guía|tutorial|checklist|check list|comandos|comando|runbook|playbook|workflow|orquest|arregl|resolv|fix|solved|solucion|solución|diagnostic|diagnostico|diagnóstico|setup|instal|configur|verificar|verificacion|verificación/.test(p)
   );
 }
 
