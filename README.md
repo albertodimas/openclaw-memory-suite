@@ -188,7 +188,7 @@ git init
 3) Publica en GitHub/GitLab.
 
 ## Licencia
-MIT (c) 2026 Alberto Dimas. Puedes cambiarlo en LICENSE.
+MIT License (c) 2026 Alberto Dimas. Ver LICENSE.
 
 ## Autor
 Alberto Dimas (NexoDash)
