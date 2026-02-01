@@ -1,5 +1,9 @@
 # OpenClaw Memory Suite (Routing + Meta Stats)
 
+[![Release](https://img.shields.io/github/v/release/albertodimas/openclaw-memory-suite)](https://github.com/albertodimas/openclaw-memory-suite/releases)
+[![License](https://img.shields.io/github/license/albertodimas/openclaw-memory-suite)](https://github.com/albertodimas/openclaw-memory-suite/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/albertodimas/openclaw-memory-suite?style=social)](https://github.com/albertodimas/openclaw-memory-suite)
+
 Coleccion de plugins de memoria para OpenClaw con routing selectivo, estadisticas por capa y meta-memory. Diseñado para minimizar ruido en contexto y optimizar latencia/uso de tokens sin perder precision.
 
 ## Incluye
